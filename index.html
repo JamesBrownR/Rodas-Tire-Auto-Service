@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rodas Tire & Auto Service - Expert Tire & Auto Repair Tulsa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c5aa0, #1e3f66);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info {
+            text-align: right;
+        }
+
+        .phone {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #ff6b35;
+            text-decoration: none;
+            display: inline-block;
+            padding: 12px 25px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 30px;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,107,53,0.3);
+        }
+
+        .phone:hover {
+            background: rgba(255,107,53,0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,107,53,0.3);
+        }
+
+        .hours {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(44,90,160,0.9), rgba(30,63,102,0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600"><rect fill="%23333" width="1000" height="600"/><circle fill="%23444" cx="200" cy="150" r="80"/><circle fill="%23444" cx="500" cy="200" r="60"/><circle fill="%23444" cx="800" cy="120" r="70"/><rect fill="%23555" x="100" y="400" width="800" height="150" rx="20"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,107,53,0.1), rgba(44,90,160,0.1));
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+            color: #ffb366;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #ff6b35, #ff8a50);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255,107,53,0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid #ff6b35;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255,107,53,0.4);
+        }
+
+        .btn-secondary:hover {
+            background: #ff6b35;
+            color: white;
+        }
+
+        .services {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
+            color: #2c5aa0;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, #ff6b35, #ffa726);
+            border-radius: 2px;
+        }
+
+        .newsletter .section-title,
+        .reservation-section .section-title {
+            color: white;
+        }
+
+        .newsletter .section-title::after,
+        .reservation-section .section-title::after {
+            background: linear-gradient(45deg, #ffa726, #ffcc02);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 4px solid #ff6b35;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255,107,53,0.2);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .service-card h3 {
+            color: #2c5aa0;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .reservation-section {
+            background: linear-gradient(135deg, #2c5aa0, #1e3f66);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .reservation-form {
+            background: rgba(255,255,255,0.15);
+            padding: 50px;
+            border-radius: 25px;
+            max-width: 650px;
+            margin: 0 auto;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            background: rgba(255,255,255,0.9);
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .gallery {
+            padding: 100px 20px;
+            background: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .gallery-item {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05) rotate(1deg);
+            box-shadow: 0 15px 40px rgba(255,107,53,0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .reviews {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 30px;
+        }
+
+        .review-card {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid #ff6b35;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255,107,53,0.1);
+        }
+
+        .stars {
+            color: #ffa726;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .reviewer {
+            font-weight: bold;
+            color: #2c5aa0;
+            margin-top: 20px;
+            font-size: 1.1rem;
+        }
+
+        .review-card p {
+            color: #555;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .show-more {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .newsletter {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #2c5aa0, #1e3f66);
+            color: white;
+        }
+
+        .newsletter-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .newsletter-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #ffa726;
+        }
+
+        .newsletter-text p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+
+        .newsletter-form-container {
+            background: rgba(255,255,255,0.15);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .newsletter-form .form-group {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 0;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 18px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .newsletter-input::placeholder {
+            color: #999;
+        }
+
+        .newsletter-btn {
+            padding: 18px 35px;
+            white-space: nowrap;
+            border-radius: 50px;
+            background: linear-gradient(45deg, #ff6b35, #ff8a50);
+        }
+
+        .location {
+            padding: 100px 20px;
+            background: white;
+        }
+
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .location-info h3 {
+            color: #2c5aa0;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+        }
+
+        .location-info p {
+            margin-bottom: 20px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .location-info strong {
+            color: #2c5aa0;
+        }
+
+        .location-info a {
+            color: #ff6b35;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .location-info a:hover {
+            text-decoration: underline;
+        }
+
+        .map-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #1e3f66, #2c5aa0);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Square Payment Integration Styles */
+        .square-payment {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .square-payment h4 {
+            color: #ffa726;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                text-align: center;
+            }
+
+            .contact-info {
+                text-align: center;
+                margin-top: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .newsletter-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .newsletter-form .form-group {
+                flex-direction: column;
+            }
+
+            .newsletter-btn {
+                width: 100%;
+            }
+
+            .location-content {
+                grid-template-columns: 1fr;
+            }
+
+            .phone {
+                font-size: 1.2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div>
+                <div class="logo">Rodas Tire & Auto Service</div>
+                <div>Expert Tire & Auto Repair Since 2015</div>
+            </div>
+            <div class="contact-info">
+                <a href="tel:19183830331" class="phone">📞 (918) 383-0331</a>
+                <div class="hours">
+                    Mon-Fri: 8:30 AM - 5 PM<br>
+                    Sat: 10 AM - 2 PM • Sun: Closed
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Tulsa's Premier Tire & Auto Experts</h1>
+            <p>Professional tire services, wheel installations, and complete auto repair. Quality products, expert installation, and honest pricing you can trust.</p>
+            <div class="cta-buttons">
+                <a href="#reservation" class="btn btn-primary">Book Service</a>
+                <a href="tel:19183830331" class="btn btn-secondary">Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🚗</div>
+                    <h3>Premium Tires</h3>
+                    <p>Complete selection of quality tires for all vehicles. Expert mounting, balancing, and alignment services.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3>Custom Wheels</h3>
+                    <p>Professional wheel installation and custom setups. Transform your vehicle's look with quality wheels.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Auto Repair</h3>
+                    <p>Complete automotive repair services. From routine maintenance to complex repairs, we've got you covered.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏁</div>
+                    <h3>Performance Upgrades</h3>
+                    <p>Enhance your vehicle's performance and appearance with professional upgrades and modifications.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔩</div>
+                    <h3>Brake Service</h3>
+                    <p>Complete brake system repair and maintenance. Safety is our priority with quality brake components.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔍</div>
+                    <h3>Diagnostics</h3>
+                    <p>Advanced diagnostic services to identify and resolve vehicle issues quickly and accurately.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reservation" class="reservation-section">
+        <div class="container">
+            <h2 class="section-title">Schedule Your Service</h2>
+            <div class="reservation-form">
+                <p style="margin-bottom: 30px;">Book your tire or auto service appointment. We'll confirm your booking and provide an estimate.</p>
+                <form id="appointmentForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicle">Vehicle (Year, Make, Model)</label>
+                        <input type="text" id="vehicle" name="vehicle" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Needed</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="tire-installation">Tire Installation</option>
+                            <option value="wheel-service">Wheel Service</option>
+                            <option value="brake-repair">Brake Repair</option>
+                            <option value="oil-change">Oil Change</option>
+                            <option value="auto-repair">General Auto Repair</option>
+                            <option value="diagnostics">Vehicle Diagnostics</option>
+                            <option value="other">Other (describe below)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="preferred-date">Preferred Date</label>
+                        <input type="date" id="preferred-date" name="preferred-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="preferred-time">Preferred Time</label>
+                        <select id="preferred-time" name="preferred-time" required>
+                            <option value="">Select time</option>
+                            <option value="morning">Morning (8:30-11:30 AM)</option>
+                            <option value="midday">Midday (11:30 AM-2:30 PM)</option>
+                            <option value="afternoon">Afternoon (2:30-5:00 PM)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Additional Details</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Describe your needs or any specific requirements..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Schedule Service</button>
+                </form>
+                
+                <!-- Square Payment Integration Area -->
+                <div class="square-payment">
+                    <h4>Secure Payment Options Available</h4>
+                    <p style="font-size: 0.9rem; opacity: 0.8;">We accept all major credit cards and digital payments for your convenience.</p>
+                    <!-- Replace YOUR_LOCATION_ID with actual Square location ID -->
+                    <div id="square-payment-form" data-location-id="YOUR_LOCATION_ID"></div>
+                </div>
+                
+                <p style="margin-top: 25px; font-size: 0.9rem; opacity: 0.8;">
+                    Prefer to call? <a href="tel:19183830331" style="color: #ffa726;">Call (918) 383-0331</a> to speak with us directly.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title">Our Work & Shop</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/JamesBrownR/Rodas-Tire-Auto-Service/main/Rodastirejuan1.png" alt="Tire Service" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/JamesBrownR/Rodas-Tire-Auto-Service/main/Rodastirejuan2.png" alt="Custom Wheels" onerror="this.src='https://images.unsplash.com/photo-1609521263047-f8f205293f24?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/JamesBrownR/Rodas-Tire-Auto-Service/main/Rodastirejuan3.png" alt="Professional Service" onerror="this.src='https://images.unsplash.com/photo-1615906655593-ad0386982a0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/JamesBrownR/Rodas-Tire-Auto-Service/main/Rodastirejuan4.png" alt="Auto Repair" onerror="this.src='https://images.unsplash.com/photo-1632823469621-700faba35a62?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/JamesBrownR/Rodas-Tire-Auto-Service/main/Rodastirejuan5.png" alt="Quality Installation" onerror="this.src='https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/JamesBrownR/Rodas-Tire-Auto-Service/main/Rodastirejuan6.png" alt="Modern Equipment" onerror="this.src='https://images.unsplash.com/photo-1593526492054-c57b632bed22?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
+                </div>
+                <div class="gallery-item hidden" id="gallery7">
+                    <img src="https://raw.githubusercontent.com/JamesBrownR/Rodas-Tire-Auto-Service/main/Rodastirejuan7.png" alt="Expert Team" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
+                </div>
+            </div>
+            <div class="show-more">
+                <button class="btn btn-primary" onclick="showMoreGallery()">Show More Photos</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>Very nice people! I'm glad my gps took me here! I went in for something silly lol my daughters bike I couldn't air up the tires I tried everything..took it in and they got it done right away! Now my princess can ride her bike yay ❤️👏 definitely recommend!</p>
+                    <div class="reviewer">- AguilarFam</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>Jaun and his guys knocked out a leveling kit on my Jeep. Communication- Great, Service-Great, Pricing-Great. Strongly recommend Juan and his crew.</p>
+                    <div class="reviewer">- Vince Medina</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>BY FAR THE BEST! As soon as I parked they were on top of it. Greeted with respect and dignity on top of the best service. Excellent customer service, fast installation and great prices. I was in and out in no time. Will be back most definitely!</p>
+                    <div class="reviewer">- SPYRO 680</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>Great guys. Great prices, great service. These guys know how to balance a tire. My truck hasn't run this smoothly down the road since it was new.</p>
+                    <div class="reviewer">- Donny Roberts</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>Great service Great Price Very satisfied customer! I highly recommended and appreciate the work they did for me</p>
+                    <div class="reviewer">- Jose Rodriguez</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>Great prices, had the tires I needed. As well quick service.</p>
+                    <div class="reviewer">- Colin Freyer</div>
+                </div>
+
+                <!-- Hidden reviews -->
+                <div class="review-card hidden review-more">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>The owner got Amazing Prices Best tires 🛞</p>
+                    <div class="reviewer">- Danny Do</div>
+                </div>
+                <div class="review-card hidden review-more">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>Rodas tire and auto service, great guys good prices. Tire changed and balanced will come again</p>
+                    <div class="reviewer">- Timothy Ka Kue</div>
+                </div>
+                <div class="review-card hidden review-more">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>Always friendly professional service good princes for tiers</p>
+                    <div class="reviewer">- Gilberto Ruvalcaba</div>
+                </div>
+                <div class="review-card hidden review-more">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>Very friendly service</p>
+                    <div class="reviewer">- Joseph Kelley</div>
+                </div>
+                <div class="review-card hidden review-more">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>Great service!</p>
+                    <div class="reviewer">- Greg Jones</div>
+                </div>
+                <div class="review-card hidden review-more">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>Excellent this place kindness service quality of products and prices they catalog them recommended 💯 %</p>
+                    <div class="reviewer">- JYG EXPRESS</div>
+                </div>
+                <div class="review-card hidden review-more">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p></p>
+                    <div class="reviewer">- Trey Wright</div>
+                </div>
+                <div class="review-card hidden review-more">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p></p>
+                    <div class="reviewer">- David Jacobs</div>
+                </div>
+                <div class="review-card hidden review-more">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p></p>
+                    <div class="reviewer">- Waymer Orozco</div>
+                </div>
+            </div>
+            <div class="show-more">
+                <button class="btn btn-primary" onclick="showMoreReviews()">Show More Reviews</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container">
+            <h2 class="section-title">Stay Connected</h2>
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h3>Get Service Updates & Special Offers</h3>
+                    <p>Subscribe to receive maintenance reminders, tire specials, and automotive tips. Stay informed about our latest services and promotions.</p>
+                </div>
+                <div class="newsletter-form-container">
+                    <form action="https://gmail.us12.list-manage.com/subscribe/post?u=55b8a8dfdd77086d0dddbf347&amp;id=f0d21f4828&amp;f_id=003f80e3f0" method="post" id="newsletter-form" class="newsletter-form" target="_blank">
+                        <div class="form-group">
+                            <input type="email" name="EMAIL" class="newsletter-input" placeholder="Enter your email address" required>
+                            <button type="submit" class="btn btn-primary newsletter-btn">Subscribe</button>
+                        </div>
+                        <div id="newsletter-response" style="display: none;"></div>
+                        <!-- Honeypot field -->
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                            <input type="text" name="b_55b8a8dfdd77086d0dddbf347_f0d21f4828" tabindex="-1" value="">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="location">
+        <div class="container">
+            <h2 class="section-title">Visit Our Shop</h2>
+            <div class="location-content">
+                <div class="location-info">
+                    <h3>Convenient Location</h3>
+                    <p><strong>Address:</strong><br>1901 S Garnett Rd<br>Tulsa, OK 74128</p>
+                    
+                    <p><strong>Phone:</strong><br><a href="tel:19183830331">(918) 383-0331</a></p>
+                    
+                    <p><strong>Hours:</strong><br>
+                    Monday - Friday: 8:30 AM - 5:00 PM<br>
+                    Saturday: 10:00 AM - 2:00 PM<br>
+                    Sunday: Closed</p>
+                    
+                    <div style="margin-top: 30px;">
+                        <a href="https://www.google.com/maps/place/Rodas+Tire+%26+Auto+Service/@36.1347308,-95.8505612,17z/data=!4m16!1m9!3m8!1s0x87b6ed8db483a603:0x221f225f0c9f6e63!2sRodas+Tire+%26+Auto+Service!8m2!3d36.1350797!4d-95.8506281!9m1!1b1!16s%2Fg%2F11mtd3zkkc!3m5!1s0x87b6ed8db483a603:0x221f225f0c9f6e63!8m2!3d36.1350797!4d-95.8506281!16s%2Fg%2F11mtd3zkkc?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-primary">Get Directions</a>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3248.324456!2d-95.8505612!3d36.1347308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b6ed8db483a603%3A0x221f225f0c9f6e63!2sRodas%20Tire%20%26%20Auto%20Service!5e0!3m2!1sen!2sus!4v1635789012345!5m2!1sen!2sus" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Rodas Tire & Auto Service. All rights reserved.</p>
+            <p>Professional tire and auto services serving Tulsa and surrounding areas.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handler
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Create mailto link with appointment details
+            const subject = encodeURIComponent('Service Appointment Request - ' + data.service);
+            const body = encodeURIComponent(
+                `New service appointment request:
+                
+Name: ${data.name}
+Phone: ${data.phone}
+Email: ${data.email}
+Vehicle: ${data.vehicle}
+Service: ${data.service}
+Preferred Date: ${data['preferred-date']}
+Preferred Time: ${data['preferred-time']}
+Additional Details: ${data.message}
+
+Please contact me to confirm this appointment and provide an estimate.`
+            );
+            
+            alert('Thank you for your service request! We will contact you within 24 hours to confirm your appointment and provide an estimate. For immediate assistance, please call (918) 383-0331.');
+            
+            // Send email notification
+            window.location.href = `mailto:service@rodasautoservice.com?subject=${subject}&body=${body}`;
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Show more reviews functionality
+        function showMoreReviews() {
+            const hiddenReviews = document.querySelectorAll('.review-more');
+            const button = event.target;
+            
+            if (button.textContent === 'Show More Reviews') {
+                hiddenReviews.forEach(review => {
+                    review.classList.remove('hidden');
+                });
+                button.textContent = 'Show Less Reviews';
+            } else {
+                hiddenReviews.forEach(review => {
+                    review.classList.add('hidden');
+                });
+                button.textContent = 'Show More Reviews';
+            }
+        }
+
+        // Show more gallery functionality
+        function showMoreGallery() {
+            const hiddenItems = document.querySelectorAll('#gallery7');
+            const button = event.target;
+            
+            if (button.textContent === 'Show More Photos') {
+                hiddenItems.forEach(item => {
+                    item.classList.remove('hidden');
+                });
+                button.textContent = 'Show Less Photos';
+            } else {
+                hiddenItems.forEach(item => {
+                    item.classList.add('hidden');
+                });
+                button.textContent = 'Show More Photos';
+            }
+        }
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Set minimum date for appointment booking (today)
+        document.addEventListener('DOMContentLoaded', function() {
+            const dateInput = document.getElementById('preferred-date');
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            dateInput.min = tomorrow.toISOString().split('T')[0];
+        });
+
+        // Call tracking for mobile users
+        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+            link.addEventListener('click', function() {
+                // Track phone calls for analytics
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'phone_call', {
+                        event_category: 'engagement',
+                        event_label: 'header_phone'
+                    });
+                }
+            });
+        });
+
+        // Add loading state to appointment form
+        document.getElementById('appointmentForm').addEventListener('submit', function() {
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Scheduling...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 3000);
+        });
+
+        // Square Payment Integration
+        // Replace YOUR_LOCATION_ID with your actual Square location ID
+        // This is where you would initialize Square payment form
+        // Example: Square.payments(SQUARE_APPLICATION_ID).payments(SQUARE_LOCATION_ID);
+    </script>
+
+    <!-- Google Analytics (replace with your tracking ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_TRACKING_ID');
+    </script>
+</body>
+</html>
